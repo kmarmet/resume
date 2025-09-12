@@ -3,14 +3,27 @@ import {BiLogoTypescript} from "react-icons/bi"
 import {BsFillBugFill, BsQuora, BsSendFill, BsTextLeft} from "react-icons/bs"
 import {CgArrowsExpandRight} from "react-icons/cg"
 import {DiHtml5, DiJsBadge, DiReact} from "react-icons/di"
-import {FaExternalLinkSquareAlt, FaFilter, FaInfoCircle, FaNode, FaRegStar, FaSass, FaSave, FaSmile, FaStar, FaStarHalfAlt} from "react-icons/fa"
+import {
+    FaExternalLinkSquareAlt,
+    FaFilter,
+    FaGithub,
+    FaInfoCircle,
+    FaLinkedinIn,
+    FaNode,
+    FaRegStar,
+    FaSass,
+    FaSave,
+    FaSmile,
+    FaStar,
+    FaStarHalfAlt,
+} from "react-icons/fa"
 import {FaAddressCard, FaAngleLeft, FaAngleRight, FaBugSlash, FaChildren, FaCodeCommit, FaMinus, FaPhone, FaSquareUpwork} from "react-icons/fa6"
 import {GiGraduateCap, GiMammoth} from "react-icons/gi"
 import {HiColorSwatch} from "react-icons/hi"
 import {HiDocumentCheck, HiPhoneArrowUpRight} from "react-icons/hi2"
 import {IoMdMegaphone} from "react-icons/io"
 import {IoClose, IoDocumentText, IoPhonePortrait} from "react-icons/io5"
-import {MdEdit, MdEmail, MdLaunch, MdTipsAndUpdates} from "react-icons/md"
+import {MdEdit, MdEmail, MdLaunch, MdMilitaryTech, MdTipsAndUpdates} from "react-icons/md"
 import {
     PiArrowsInSimple,
     PiCalendarDotsFill,
@@ -29,8 +42,9 @@ import {RxUpdate} from "react-icons/rx"
 import {SiCoffeescript, SiJquery, SiLodash} from "react-icons/si"
 import {TbArrowBadgeRightFilled, TbCircleDotFilled, TbMessageCircleSearch, TbSql} from "react-icons/tb"
 import Svgs from "./svgs/svgs"
-
 const CommonIcons = {
+    linkedInOutline: <FaLinkedinIn className="linkedin-icon" />,
+    github: <FaGithub className="github-icon" />,
     quora: <BsQuora className="quora-icon" />,
     upwork: <FaSquareUpwork className="upwork-icon" />,
     workHistory: <IoDocumentText className="work-history-icon" />,
@@ -46,6 +60,7 @@ const CommonIcons = {
     expand: <CgArrowsExpandRight className="expand-icon" />,
     csharp: Svgs.csharp,
     dotnet: Svgs.dotnet,
+    veteran: <MdMilitaryTech className="veteran-icon" />,
     typescript: <BiLogoTypescript className="typescript-icon" />,
     sql: <TbSql className="sql-icon" />,
     html: <DiHtml5 className="html-icon" />,

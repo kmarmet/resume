@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import {useSelector} from "react-redux"
+import CommonIcons from "./components/commonIcons"
 import Header from "./components/header"
 import Menu from "./components/menu"
 import About from "./components/sections/about"
@@ -18,6 +19,28 @@ const App = () => {
     return (
         <div className="App">
             <Header />
+            <div id="floating-buttons">
+                <a href="tel:3307494534" target="_blank" rel="noreferrer" className="floating-button phone">
+                    <button>
+                        <span className="icon-wrapper">{CommonIcons.call}</span>
+                    </button>
+                </a>
+                <a href="https://github.com/kmarmet" target="_blank" rel="noreferrer" className="floating-button github">
+                    <button>
+                        <span className="icon-wrapper">{CommonIcons.github}</span>
+                    </button>
+                </a>
+                <a href="https://www.linkedin.com/in/kmarmet/" target="_blank" rel="noreferrer" className="floating-button linkedin">
+                    <button>
+                        <span className="icon-wrapper">{CommonIcons.linkedInOutline}</span>
+                    </button>
+                </a>
+                <a href="mailto:kevinmarmet@gmail.com" target="_blank" rel="noreferrer" className="floating-button email">
+                    <button>
+                        <span className="icon-wrapper">{CommonIcons.email}</span>
+                    </button>
+                </a>
+            </div>
             <div id="blur" className={blur ? "blur-in" : "blur-out"}>
                 <div className="drops">
                     <div className="drop"></div>

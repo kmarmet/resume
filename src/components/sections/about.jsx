@@ -60,7 +60,7 @@ const About = () => {
                         scopedClass="years-roller-about"
                         maxYear={9}
                         shouldRoll={activeSection === MenuItems.about}
-                        delay={1000}
+                        delay={1500}
                     />
                     <p>
                         Years of <br />
@@ -108,6 +108,10 @@ const About = () => {
                         <li>Quick learner</li>
                     </ul>
                 </div>
+            </div>
+            <div className="veteran">
+                <span className="icon-wrapper">{CommonIcons.veteran}</span> <span className="red">U.S.</span> <span className="white">Army</span>{" "}
+                <span className="blue">Veteran</span>
             </div>
         </div>
     )

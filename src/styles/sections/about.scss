@@ -1,6 +1,37 @@
 @use "../palette.scss" as *;
 @use "../mixins.scss" as *;
 #about-section {
+    .veteran {
+        font-style: italic;
+        padding: 8px 12px;
+        font-size: 14px;
+        margin: 20px auto 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 0 5px;
+        background-color: #16161e46;
+        border-radius: 10px;
+        width: max-content;
+
+        svg {
+            color: gold;
+        }
+
+        span {
+            padding: 0;
+            margin: 0;
+            font-weight: 600;
+            &.red {
+                color: #b22234;
+            }
+            &.white {
+                color: #fff;
+            }
+            &.blue {
+                color: #4366ff;
+            }
+        }
+    }
     .section-content {
         display: flex;
         justify-content: center;

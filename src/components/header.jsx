@@ -26,9 +26,6 @@ const Header = () => {
                     <p className="location">
                         <span className="icon-wrapper location-icon-wrapper">{CommonIcons.address}</span>Remote, US
                     </p>
-                    <h4>
-                        <Flag /> <span className="red">U.S.</span> <span className="white">Army</span> <span className="blue">Veteran</span>
-                    </h4>
                 </div>
                 <div className="right column">
                     <a href="tel:3307494534" target="_blank" rel="noreferrer" className="contact-button phone">

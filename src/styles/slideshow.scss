@@ -30,7 +30,8 @@
                 transition: all 0.5s ease;
                 overflow: auto;
                 opacity: 1;
-
+                position: relative;
+                z-index: 99999999999999;
                 img {
                     &.active {
                         max-width: 90vw;
