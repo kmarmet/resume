@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react"
 import {useDispatch, useSelector} from "react-redux"
 import {setActiveSection} from "../../redux/globalState"
 import CommonIcons from "../commonIcons"
+import ImageUrls from "../constants/imageUrls"
 import MenuItems from "../constants/menuItems"
 import MyConfetti from "../shared/myConfetti"
 import Spacer from "../shared/spacer"
@@ -49,8 +50,7 @@ const About = () => {
             <div className="section-content">
                 <div
                     style={{
-                        backgroundImage:
-                            "url('https://media.licdn.com/dms/image/v2/D5603AQHOoDTNLnaB7Q/profile-displayphoto-scale_200_200/B56ZkzZH.8HAAc-/0/1757503849165?e=1760572800&v=beta&t=MwWjEWQlmWd0X2YjVO5zjdro-v6LV_nw7HvtCftPJOs')",
+                        backgroundImage: `url(${ImageUrls.me})`,
                     }}
                     id="profile-picture"
                 />
