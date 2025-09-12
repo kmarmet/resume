@@ -31,12 +31,12 @@ const Header = () => {
                     </h4>
                 </div>
                 <div className="right column">
-                    <div className="contact-button phone">
-                        <a href="tel:3307494534" target="_blank" rel="noreferrer">
+                    <a href="tel:3307494534" target="_blank" rel="noreferrer" className="contact-button phone">
+                        <div className="contact-button">
                             <span className="icon-wrapper">{CommonIcons.phone}</span>
                             <span>Let&apos;s Chat!</span>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                     <div className="contact-button github" title="Not All Repos Are Public">
                         <a href="https://github.com/kmarmet" target="_blank" rel="noreferrer">
                             <span className="icon-wrapper">
