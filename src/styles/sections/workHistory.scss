@@ -1,0 +1,35 @@
+@use "../mixins.scss" as *;
+@use "../palette.scss" as *;
+#work-history {
+    .job {
+        background-color: $sectionBg;
+        padding: 20px;
+        border-radius: 20px;
+        border: 1px solid $sectionBorder;
+
+        .job-title {
+            color: $purple;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            span {
+                color: $foreground;
+                font-size: 14px;
+                font-weight: 400;
+                font-style: italic;
+            }
+        }
+
+        .job-company-name,
+        .job-location {
+            color: $foreground;
+
+            &.job-company-name {
+                font-style: italic;
+            }
+            &.job-location {
+                opacity: 0.65;
+            }
+        }
+    }
+}

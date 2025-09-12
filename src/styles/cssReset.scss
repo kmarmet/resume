@@ -1,0 +1,195 @@
+@use "./palette.scss" as *;
+/*#region  CSS RESET */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    line-height: 1;
+}
+
+.flex {
+    display: flex;
+}
+
+// Global scrollbar styling
+* {
+    // Firefox
+    scrollbar-width: none; // auto | thin | none
+    scrollbar-color: $cyan transparent; // thumb | track
+}
+
+.with-particles {
+    overflow: auto;
+    &::after {
+        animation: theButtonAnimation linear 1.65s forwards;
+        background-image: radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%),
+            radial-gradient(circle, rgba(188.99999999999994, 147, 249, 1) 45%, transparent 45%);
+    }
+}
+
+b {
+    font-weight: 700;
+}
+
+p {
+    line-height: 1.4;
+}
+
+i {
+    font-style: italic;
+}
+
+u {
+    text-decoration: underline;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: none;
+}
+
+footer,
+header,
+nav,
+section,
+main {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    padding-bottom: 200px;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+html,
+body {
+    background-color: $background;
+    overflow-x: hidden;
+    overflow-y: auto;
+    // overflow: hidden;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+/*#endregion  CSS RESET */

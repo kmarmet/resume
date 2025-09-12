@@ -1,0 +1,108 @@
+@layer responsive {
+    .App {
+        // Mobile
+        @media (max-width: 700px) {
+            .modal {
+                width: 90vw !important;
+            }
+            .skeleton {
+                margin: 0 !important;
+                width: 100vw !important;
+                padding: 0 15px !important;
+                .section-content {
+                    padding: 0 !important;
+                }
+                #work-history {
+                    .job {
+                        .job-title,
+                        .job-company-name {
+                            flex-wrap: wrap !important;
+                            font-size: 16px !important;
+
+                            span {
+                                width: 100% !important;
+                                line-height: 1.4 !important;
+                            }
+                        }
+                        .dates {
+                            font-size: 14px !important;
+                        }
+                    }
+                }
+                #education {
+                    .awards {
+                        .award {
+                            .value {
+                                line-height: 1.3 !important;
+                            }
+                        }
+                    }
+                }
+
+                .section {
+                    &#portfolio {
+                        .flex {
+                            flex-wrap: wrap !important;
+                        }
+                    }
+                }
+
+                #menu {
+                    #menu-items {
+                        // display: block !important;
+                        flex-wrap: wrap !important;
+                        display: flex !important;
+                        justify-content: center !important;
+                        .menu-item {
+                            width: calc(100% / 2) !important;
+                            margin-bottom: 20px !important;
+                        }
+                    }
+                }
+                #years-experience-wrapper {
+                    position: relative !important;
+                    margin: 0 auto !important;
+                    width: 100% !important;
+                    right: unset !important;
+                    top: unset !important;
+                }
+
+                #skills {
+                    grid-template-columns: 1fr 1fr 1fr !important;
+                    justify-content: center !important;
+                    max-width: unset !important;
+                }
+            }
+            #header {
+                * {
+                    text-align: center !important;
+                    justify-content: center !important;
+                }
+                h4 {
+                    margin: 10px auto !important;
+                }
+                .flex {
+                    display: block !important;
+                    .left {
+                        .name {
+                            // display: block !important;
+                            white-space: nowrap !important;
+                            flex-wrap: wrap !important;
+                            .role {
+                                padding-top: 5px !important;
+                                line-height: 1.4 !important;
+                            }
+                            .separator {
+                                display: none;
+                            }
+                        }
+                    }
+                    .right {
+                        margin-top: 15px !important;
+                        width: 100% !important;
+                    }
+                }
+            }
+        }
+    }
+}

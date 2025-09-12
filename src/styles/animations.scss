@@ -1,0 +1,402 @@
+@keyframes SlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes opacity {
+    from {
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes rotate {
+    from {
+        opacity: 0.8;
+    }
+    to {
+        transform: rotate(360deg);
+        opacity: 0.8;
+    }
+}
+
+@keyframes down {
+    from {
+        left: 10px;
+    }
+    to {
+        left: 57px;
+    }
+}
+
+@keyframes spew {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.8;
+    }
+}
+
+@keyframes final {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes finalbox {
+    from {
+    }
+    to {
+        width: 50px;
+    }
+}
+@keyframes tick {
+    from {
+    }
+    to {
+        transform: scale(1) rotate(-90deg);
+    }
+}
+
+@keyframes Twerk {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    5% {
+        transform: translateX(-4px);
+    }
+    10% {
+        transform: translateX(4px);
+    }
+    15% {
+        transform: translateX(-4px);
+    }
+    20% {
+        transform: translateX(4px);
+    }
+    25% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes SlideDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes BlurOut {
+    0% {
+        opacity: 1;
+        backdrop-filter: blur(40px);
+    }
+    100% {
+        opacity: 0;
+        backdrop-filter: blur(0);
+    }
+}
+
+@keyframes BlurIn {
+    0% {
+        opacity: 0;
+        backdrop-filter: blur(0);
+    }
+    100% {
+        opacity: 1;
+        backdrop-filter: blur(40px);
+    }
+}
+
+@keyframes DissolveScaleFadeIn {
+    0% {
+        opacity: 0;
+        backdrop-filter: blur(0);
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        backdrop-filter: blur(4px);
+        transform: scale(1);
+    }
+}
+
+@keyframes DissolveScaleFadeOut {
+    0% {
+        opacity: 1;
+        backdrop-filter: blur(20px);
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        backdrop-filter: blur(0);
+        transform: scale(50%);
+        pointer-events: none;
+    }
+}
+
+// Dissolve keyframes
+@keyframes DissolveIn {
+    0% {
+        opacity: 0;
+        transform: scale(1.05); // slight enlarge for "cloudy" feel
+        backdrop-filter: blur(20px);
+    }
+    100% {
+        opacity: 1;
+        backdrop-filter: blur(0);
+        transform: scale(1);
+    }
+}
+
+@keyframes DissolveOut {
+    0% {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        filter: blur(20px);
+        transform: scale(0.95);
+    }
+}
+
+@keyframes ScaleIn {
+    // 0% {
+    //     opacity: 0;
+    //     transform: scale(1.05); // slight enlarge for "cloudy" feel
+    // }
+    // 100% {
+    //     opacity: 1;
+    //     transform: scale(1);
+    // }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes ScaleOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+@keyframes theButtonAnimation {
+    0% {
+        background-size: 42px 42px, 23px 23px, 29px 29px, 38px 38px, 38px 38px, 28px 28px, 40px 40px, 25px 25px, 24px 24px, 34px 34px, 44px 44px,
+            22px 22px, 33px 33px, 33px 33px, 36px 36px, 43px 43px, 24px 24px, 27px 27px, 25px 25px, 34px 34px, 35px 35px, 29px 29px, 34px 34px,
+            31px 31px, 24px 24px, 25px 25px, 28px 28px, 31px 31px, 42px 42px, 43px 43px, 30px 30px, 25px 25px, 22px 22px, 38px 38px;
+        background-position: 528px 487px, 535px 506px, 528px 511px, 518px 514px, 511px 521px, 508px 531px, 493px 528px, 492px 538px, 483px 538px,
+            468px 531px, 455px 523px, 458px 529px, 445px 517px, 439px 510px, 434px 500px, 428px 487px, 436px 487px, 436px 476px, 439px 469px,
+            439px 456px, 444px 447px, 454px 444px, 460px 437px, 470px 435px, 483px 436px, 492px 436px, 499px 436px, 507px 438px, 509px 438px,
+            515px 443px, 528px 458px, 535px 469px, 538px 479px, 531px 480px;
+    }
+    10% {
+        background-size: 26px 26px, 14px 14px, 19px 19px, 24px 24px, 24px 24px, 18px 18px, 26px 26px, 16px 16px, 15px 15px, 22px 22px, 28px 28px,
+            14px 14px, 21px 21px, 21px 21px, 22px 22px, 27px 27px, 15px 15px, 17px 17px, 16px 16px, 21px 21px, 22px 22px, 18px 18px, 21px 21px,
+            19px 19px, 15px 15px, 15px 15px, 18px 18px, 19px 19px, 26px 26px, 28px 28px, 19px 19px, 15px 15px, 14px 14px, 24px 24px;
+        background-position: 601px 503px, 581px 536px, 572px 539px, 533px 558px, 496px 557px, 513px 584px, 486px 614px, 470px 575px, 536px 598px,
+            450px 608px, 417px 520px, 429px 530px, 418px 494px, 366px 515px, 453px 541px, 427px 572px, 371px 460px, 402px 543px, 455px 420px,
+            406px 473px, 422px 416px, 450px 426px, 392px 439px, 423px 401px, 462px 376px, 529px 399px, 501px 396px, 505px 379px, 555px 382px,
+            570px 445px, 555px 418px, 590px 479px, 591px 443px, 572px 535px;
+    }
+    20% {
+        background-size: 17px 17px, 9px 9px, 12px 12px, 15px 15px, 16px 16px, 11px 11px, 17px 17px, 10px 10px, 9px 9px, 14px 14px, 18px 18px, 9px 9px,
+            13px 13px, 13px 13px, 14px 14px, 17px 17px, 10px 10px, 11px 11px, 10px 10px, 13px 13px, 14px 14px, 11px 11px, 13px 13px, 12px 12px,
+            9px 9px, 10px 10px, 11px 11px, 12px 12px, 17px 17px, 18px 18px, 12px 12px, 10px 10px, 9px 9px, 15px 15px;
+        background-position: 653px 513px, 602px 553px, 591px 552px, 526px 570px, 472px 544px, 508px 609px, 475px 681px, 453px 581px, 582px 638px,
+            434px 666px, 411px 495px, 438px 506px, 433px 464px, 306px 514px, 501px 529px, 438px 637px, 321px 435px, 389px 597px, 488px 400px,
+            402px 496px, 415px 401px, 467px 441px, 340px 451px, 386px 383px, 443px 331px, 557px 383px, 497px 380px, 497px 337px, 589px 337px,
+            597px 457px, 562px 394px, 619px 492px, 623px 415px, 586px 575px;
+    }
+    30% {
+        background-size: 10px 10px, 5px 5px, 7px 7px, 10px 10px, 10px 10px, 7px 7px, 10px 10px, 6px 6px, 6px 6px, 9px 9px, 11px 11px, 5px 5px, 8px 8px,
+            8px 8px, 9px 9px, 11px 11px, 6px 6px, 7px 7px, 6px 6px, 8px 8px, 8px 8px, 7px 7px, 8px 8px, 8px 8px, 6px 6px, 6px 6px, 7px 7px, 7px 7px,
+            10px 10px, 11px 11px, 7px 7px, 6px 6px, 6px 6px, 9px 9px;
+        background-position: 694px 520px, 609px 562px, 594px 554px, 505px 552px, 482px 471px, 501px 616px, 463px 740px, 446px 563px, 623px 670px,
+            419px 717px, 439px 467px, 511px 480px, 492px 460px, 251px 511px, 514px 453px, 451px 691px, 276px 411px, 382px 644px, 522px 405px,
+            425px 516px, 417px 397px, 507px 516px, 296px 464px, 354px 371px, 426px 292px, 576px 378px, 492px 380px, 488px 304px, 617px 297px,
+            605px 473px, 560px 382px, 633px 505px, 645px 391px, 588px 605px;
+    }
+    40% {
+        background-size: 6px 6px, 3px 3px, 5px 5px, 6px 6px, 6px 6px, 4px 4px, 7px 7px, 4px 4px, 3px 3px, 6px 6px, 7px 7px, 3px 3px, 5px 5px, 5px 5px,
+            5px 5px, 7px 7px, 4px 4px, 4px 4px, 4px 4px, 5px 5px, 5px 5px, 4px 4px, 5px 5px, 5px 5px, 3px 3px, 4px 4px, 4px 4px, 4px 4px, 6px 6px,
+            7px 7px, 5px 5px, 4px 4px, 3px 3px, 6px 6px;
+        background-position: 728px 525px, 604px 563px, 581px 546px, 484px 471px, 533px 442px, 492px 607px, 451px 795px, 460px 518px, 660px 697px,
+            405px 762px, 514px 475px, 565px 501px, 540px 525px, 199px 507px, 480px 435px, 464px 739px, 235px 388px, 379px 684px, 549px 432px,
+            493px 516px, 426px 402px, 521px 565px, 257px 477px, 326px 362px, 410px 257px, 589px 382px, 486px 397px, 478px 275px, 641px 259px,
+            595px 490px, 550px 380px, 634px 516px, 662px 370px, 582px 625px;
+    }
+    50% {
+        background-size: 4px 4px, 2px 2px, 3px 3px, 4px 4px, 4px 4px, 2px 2px, 4px 4px, 2px 2px, 2px 2px, 3px 3px, 4px 4px, 2px 2px, 3px 3px, 3px 3px,
+            3px 3px, 4px 4px, 2px 2px, 3px 3px, 2px 2px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 3px, 2px 2px, 2px 2px, 3px 3px, 3px 3px, 4px 4px,
+            4px 4px, 3px 3px, 2px 2px, 2px 2px, 4px 4px;
+        background-position: 758px 529px, 586px 557px, 545px 525px, 498px 420px, 555px 462px, 484px 578px, 438px 846px, 533px 463px, 695px 721px,
+            391px 805px, 550px 535px, 564px 524px, 521px 565px, 148px 502px, 461px 472px, 477px 782px, 195px 366px, 377px 721px, 552px 484px,
+            554px 467px, 444px 420px, 516px 566px, 220px 490px, 302px 355px, 395px 225px, 596px 393px, 483px 436px, 467px 251px, 664px 223px,
+            561px 508px, 534px 390px, 623px 525px, 674px 352px, 570px 638px;
+    }
+    60% {
+        background-size: 2px 2px, 1px 1px, 2px 2px, 2px 2px, 2px 2px, 1px 1px, 2px 2px, 1px 1px, 1px 1px, 2px 2px, 3px 3px, 1px 1px, 2px 2px, 2px 2px,
+            2px 2px, 3px 3px, 1px 1px, 1px 1px, 1px 1px, 2px 2px, 2px 2px, 1px 1px, 2px 2px, 2px 2px, 1px 1px, 1px 1px, 2px 2px, 1px 1px, 2px 2px,
+            3px 3px, 2px 2px, 1px 1px, 1px 1px, 2px 2px;
+        background-position: 784px 532px, 550px 539px, 462px 478px, 514px 411px, 531px 507px, 485px 510px, 425px 896px, 577px 462px, 728px 743px,
+            377px 845px, 534px 569px, 517px 525px, 486px 563px, 100px 497px, 511px 536px, 489px 823px, 157px 344px, 377px 754px, 491px 535px,
+            561px 435px, 478px 461px, 499px 518px, 186px 503px, 279px 350px, 380px 195px, 594px 411px, 501px 527px, 457px 230px, 685px 188px,
+            474px 505px, 512px 417px, 598px 530px, 682px 337px, 554px 642px;
+    }
+    70% {
+        background-size: 1px 1px, 0px 0px, 1px 1px, 1px 1px, 1px 1px, 1px 1px, 1px 1px, 1px 1px, 0px 0px, 1px 1px, 2px 2px, 0px 0px, 1px 1px, 1px 1px,
+            1px 1px, 1px 1px, 1px 1px, 1px 1px, 1px 1px, 1px 1px, 1px 1px, 1px 1px, 1px 1px, 1px 1px, 0px 0px, 1px 1px, 1px 1px, 1px 1px, 1px 1px,
+            2px 2px, 1px 1px, 1px 1px, 1px 1px, 1px 1px;
+        background-position: 807px 534px, 475px 482px, 422px 457px, 524px 432px, 451px 516px, 524px 434px, 412px 943px, 592px 475px, 759px 764px,
+            363px 883px, 502px 573px, 455px 470px, 466px 509px, 52px 491px, 555px 528px, 501px 861px, 121px 322px, 378px 784px, 429px 515px,
+            546px 425px, 525px 548px, 492px 439px, 154px 515px, 260px 347px, 366px 167px, 583px 439px, 532px 579px, 448px 211px, 705px 154px,
+            421px 470px, 487px 484px, 553px 529px, 688px 323px, 534px 637px;
+    }
+    80% {
+        background-size: 1px 1px, 0px 0px, 0px 0px, 1px 1px, 1px 1px, 0px 0px, 1px 1px, 0px 0px, 0px 0px, 1px 1px, 1px 1px, 0px 0px, 0px 0px, 0px 0px,
+            0px 0px, 1px 1px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 1px 1px,
+            1px 1px, 0px 0px, 0px 0px, 0px 0px, 1px 1px;
+        background-position: 828px 536px, 435px 437px, 409px 451px, 511px 498px, 430px 486px, 551px 409px, 399px 989px, 583px 495px, 790px 783px,
+            350px 920px, 470px 534px, 457px 439px, 516px 449px, 6px 485px, 548px 491px, 514px 897px, 85px 301px, 379px 812px, 411px 477px, 515px 439px,
+            540px 590px, 496px 424px, 124px 527px, 242px 345px, 352px 141px, 552px 479px, 550px 597px, 438px 195px, 724px 121px, 405px 446px,
+            500px 570px, 466px 489px, 691px 312px, 512px 622px;
+    }
+    90% {
+        background-size: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px,
+            0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px,
+            0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+        background-position: 846px 538px, 419px 414px, 416px 455px, 462px 556px, 455px 465px, 568px 402px, 386px 1035px, 540px 514px, 819px 801px,
+            337px 956px, 496px 455px, 485px 444px, 559px 459px, -40px 479px, 472px 481px, 525px 931px, 50px 281px, 381px 838px, 420px 445px,
+            481px 514px, 544px 611px, 502px 451px, 95px 539px, 226px 344px, 339px 115px, 466px 523px, 560px 599px, 429px 181px, 742px 89px,
+            407px 431px, 521px 604px, 427px 443px, 692px 303px, 488px 591px;
+    }
+    100% {
+        background-size: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px,
+            0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px,
+            0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+        background-position: 863px 539px, 414px 403px, 447px 472px, 438px 562px, 524px 494px, 575px 409px, 373px 1079px, 451px 496px, 847px 819px,
+            324px 991px, 546px 441px, 517px 516px, 565px 495px, -85px 474px, 441px 522px, 537px 964px, 16px 261px, 384px 863px, 448px 427px,
+            495px 574px, 542px 618px, 497px 540px, 68px 551px, 213px 344px, 326px 91px, 407px 522px, 561px 586px, 420px 169px, 760px 58px, 422px 426px,
+            539px 619px, 413px 415px, 690px 296px, 470px 533px;
+    }
+}
+
+@keyframes DissolveScaleFadeIn {
+    0% {
+        opacity: 0;
+        backdrop-filter: blur(0);
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        backdrop-filter: blur(40px);
+        transform: scale(1);
+        pointer-events: all;
+    }
+}
+
+@keyframes SlideUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 100%) scale(1.05);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes bubble-float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(-50px) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.5;
+    }
+}
+
+@keyframes Rain {
+    0% {
+        top: -50%;
+    }
+    100% {
+        top: 110%;
+    }
+}
+
+@keyframes SlideDown {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, 100%);
+    }
+}
+
+@keyframes DissolveScaleFadeOut {
+    0% {
+        opacity: 1;
+        backdrop-filter: blur(40px);
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        backdrop-filter: blur(0);
+        transform: scale(50%);
+    }
+}
+
+@keyframes borderGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes FillButton {
+    0% {
+        height: 0%;
+        opacity: 0;
+    }
+    100% {
+        height: 100%;
+        opacity: 1;
+    }
+}

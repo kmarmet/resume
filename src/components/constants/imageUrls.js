@@ -1,0 +1,26 @@
+const ImageUrls = {
+    roleManagement: "https://i.imghippo.com/files/qfW1003N.png",
+    cameraManagement: "https://i.imghippo.com/files/ziUs2329ek.png",
+    userManagement: "https://i.imghippo.com/files/qsXV5504sk.png",
+    hostManagement: "https://i.imghippo.com/files/Br2447gw.png",
+    replay: "https://i.imghippo.com/files/fmxh9362eOk.png",
+    allCameras: "https://i.imghippo.com/files/GEJC2754xpY.png",
+    replayWithDrag: "https://i.imghippo.com/files/JQ6015r.png",
+    upwork: "https://i.imghippo.com/files/UyA2236xDI.png",
+    quora: "https://i.imghippo.com/files/UjfW7885m.png",
+    upworkStats: "https://i.imghippo.com/files/oBH2430gg.png",
+    gradallOne: "https://i.imghippo.com/files/VPk5140ktM.png",
+    gradallTwo: "https://i.imghippo.com/files/xD3197zJg.png",
+    gradallThree: "https://i.imghippo.com/files/hrD6697J.png",
+    essenceAppOne: "https://i.imghippo.com/files/zFL6715bg.webp",
+    essenceAppTwo: "https://i.imghippo.com/files/dT3734WME.webp",
+    essenceAppThree: "https://i.imghippo.com/files/LHvw5830qos.webp",
+    essenceAppFour: "https://i.imghippo.com/files/bxl7882DmI.webp",
+    essenceAppFive: "https://i.imghippo.com/files/xKaf5223bFI.webp",
+    essenceAppSix: "https://i.imghippo.com/files/wVN9399iU.webp",
+    oldDogsOne: "https://i.imghippo.com/files/gFUq6698VM.png",
+    oldDogsTwo: "https://i.imghippo.com/files/QVM6783gYQ.png",
+    oldDogsThree: "https://i.imghippo.com/files/ZMXk4221AM.png",
+}
+
+export default ImageUrls

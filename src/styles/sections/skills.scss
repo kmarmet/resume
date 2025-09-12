@@ -1,0 +1,186 @@
+@use "../palette.scss" as *;
+
+#skills-section {
+    .tech-section-title {
+        color: $yellow;
+        font-size: 18px;
+    }
+    .tech-section-subtitle {
+        color: $foreground;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: italic;
+        opacity: 0.6;
+    }
+    .bubbles {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+
+        .bubble {
+            background-color: $selection;
+            color: $foreground;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: center;
+            line-height: 1;
+            white-space: nowrap;
+            font-size: 15px;
+            padding: 5px 10px;
+            border-radius: 20px;
+
+            &.coffeescript {
+                svg {
+                    color: #3e2723;
+                    filter: brightness(4);
+                }
+            }
+            &.lodash {
+                svg {
+                    transform: scale(0.8);
+                    color: #0177ff;
+                    filter: brightness(2);
+                }
+            }
+            &.react {
+                svg {
+                    color: #58c4dc;
+                    transform: scale(1.3);
+                }
+            }
+            &.jquery {
+                svg {
+                    color: #0769ad;
+                }
+            }
+            &.mammoth {
+                svg {
+                    color: $purple;
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+    #skills {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-content: center;
+        overflow: visible;
+        position: relative;
+        max-width: calc(100vw - 35%);
+        width: 100%;
+        .skill {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: $background;
+            color: $foreground;
+            border-radius: 25px;
+            aspect-ratio: 1 / 1;
+            position: relative;
+            transition: opacity 0.8s linear;
+            z-index: 1;
+            opacity: 0;
+            overflow: hidden;
+
+            &.active {
+                opacity: 1;
+                transition: opacity 2s ease, transform 0.5s ease;
+            }
+
+            &:hover {
+                box-shadow: 0 48px 20px -20px rgba(0, 0, 0, 0.9);
+                transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                transform: scale(1.2);
+                z-index: 2;
+                cursor: pointer;
+
+                .expand-icon {
+                    transform: scale(1.4);
+                    transition: all 0.4s ease;
+                }
+            }
+
+            .icon-wrapper {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 50%;
+                width: 50%;
+
+                &.expand-icon {
+                    bottom: 10px;
+                    transform: unset;
+                    top: unset;
+                    left: unset;
+                    right: 15px;
+                    height: 18px;
+                    width: 18px;
+                    opacity: 0.7;
+                }
+            }
+            &.node {
+                background-color: #549a48;
+                svg {
+                    color: white !important;
+                }
+            }
+            &.dotnet {
+                background-color: #165298;
+                svg {
+                    color: white !important;
+                }
+            }
+            &.csharp {
+                background-color: #68217a;
+                svg {
+                    color: white !important;
+                }
+            }
+            &.typescript {
+                background-color: #3178c6;
+                svg {
+                    color: white !important;
+                }
+            }
+            &.react {
+                background-color: #58c4dc;
+                svg {
+                    color: white !important;
+                }
+            }
+            &.js {
+                background-color: #f7df1e;
+                svg {
+                    color: white !important;
+                }
+            }
+            &.html {
+                background-color: #e34c26;
+                svg {
+                    color: white !important;
+                }
+            }
+            &.css {
+                background-color: #236ec1;
+                svg {
+                    color: white !important;
+                }
+            }
+            &.sass {
+                background-color: #cf649a;
+                svg {
+                    color: white !important;
+                }
+            }
+            &.sql {
+                background-color: #d14d4d;
+                svg {
+                    color: white !important;
+                }
+            }
+        }
+    }
+}

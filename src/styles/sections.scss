@@ -1,0 +1,92 @@
+@use "./sections/about.scss";
+@use "./mixins.scss" as *;
+@use "./palette.scss" as *;
+@use "./sections/skills.scss" as *;
+@use "./sections/workHistory.scss" as *;
+@use "./sections/education.scss" as *;
+@use "./sections/portfolio.scss" as *;
+.section {
+    max-width: 100%;
+    flex-wrap: wrap;
+}
+
+#sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-bottom: 200px;
+}
+
+.section {
+    opacity: 0;
+    transition: all 0.4s ease;
+    transform: translateY(300px);
+    z-index: -1;
+    position: relative;
+    max-height: 0;
+    overflow: auto;
+    pointer-events: none;
+
+    &.active {
+        z-index: 1;
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 99vh;
+        pointer-events: all;
+        transition: all 1s ease;
+    }
+
+    .section-content {
+        padding-top: 20px;
+        position: relative;
+        max-width: 100%;
+
+        ul {
+            margin-left: 25px;
+            li {
+                line-height: 1.4;
+                list-style-type: disc;
+                color: rgba(white, 0.8);
+            }
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 5px;
+        }
+
+        h2,
+        h3 {
+            color: white;
+
+            .icon-wrapper {
+                height: 20px;
+                width: 20px;
+
+                svg {
+                    color: $green;
+                }
+
+                &.eyes {
+                    svg {
+                        color: $orange;
+                        transform: scaleX(-1);
+                    }
+                }
+            }
+        }
+
+        h2 {
+            font-size: 18px;
+        }
+
+        h3 {
+            font-size: 17px;
+        }
+    }
+}

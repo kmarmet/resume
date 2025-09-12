@@ -1,0 +1,54 @@
+@use "../palette.scss" as *;
+@use "../mixins.scss" as *;
+#about-section {
+    .section-content {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        position: relative;
+
+        #profile-picture {
+            height: 170px;
+            width: 170px;
+            background-size: cover;
+            border-radius: 50%;
+            aspect-ratio: 1 / 1;
+            transition: all 0.4s ease;
+            position: relative;
+            @include MovingBorder;
+        }
+        .text-wrapper {
+            align-self: center;
+            .intro {
+                font-size: 20px;
+                padding-bottom: 5px;
+                color: $yellow;
+            }
+            .text {
+                margin: 0;
+                color: rgba(white, 0.8);
+                font-weight: 300;
+                margin-bottom: 10px;
+            }
+        }
+
+        #years-experience-wrapper {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            p:not(.number):not(.default-roller-number) {
+                color: white;
+                font-size: 18px;
+                text-align: center;
+                padding-top: 10px;
+            }
+        }
+    }
+}

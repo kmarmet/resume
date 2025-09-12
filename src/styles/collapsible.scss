@@ -1,0 +1,53 @@
+@use "./mixins" as *;
+@use "./fonts" as *;
+@use "./palette" as *;
+.collapsible-title {
+    color: white;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3178c6;
+    border: 0;
+    border-radius: 50px;
+    padding: 10px 15px;
+    transition: all 0.4s ease;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: all 0.4s ease;
+    }
+
+    svg {
+        margin-left: 5px;
+        position: relative;
+        top: 2px;
+    }
+}
+.collapsible {
+    transition: all 0.5s ease;
+    max-height: 0;
+    opacity: 0;
+    position: relative;
+    pointer-events: none;
+    transform: translateY(+100px);
+
+    &.open {
+        margin-top: 10px;
+        opacity: 1;
+        max-height: 1000px;
+        transition: all 0.5s ease;
+        z-index: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    &.closed {
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .content {
+        width: 100%;
+    }
+}
