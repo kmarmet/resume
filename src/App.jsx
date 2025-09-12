@@ -20,7 +20,7 @@ const App = () => {
         <div className="App">
             <Header />
             <div id="floating-buttons">
-                <a href="tel:3307494534" target="_blank" rel="noreferrer" className="floating-button phone">
+                <a href="tel:3307494534" className="floating-button phone">
                     <span className="icon-wrapper">{CommonIcons.call}</span>
                 </a>
                 <a href="https://github.com/kmarmet" target="_blank" rel="noreferrer" className="floating-button github">
