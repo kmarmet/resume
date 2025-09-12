@@ -411,6 +411,7 @@ p {
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(5, 1fr);
+            overflow-y: hidden;
             .menu-item {
                 transition: all 0.4s ease;
                 display: flex;

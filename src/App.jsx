@@ -33,7 +33,7 @@ const App = () => {
                         <span className="icon-wrapper">{CommonIcons.linkedInOutline}</span>
                     </button>
                 </a>
-                <a href="mailto:kevinmarmet@gmail.com" target="_blank" rel="noreferrer" className="floating-button email">
+                <a href="mailto:kmarmet1@gmail.com" target="_blank" rel="noreferrer" className="floating-button email">
                     <button>
                         <span className="icon-wrapper">{CommonIcons.email}</span>
                     </button>
