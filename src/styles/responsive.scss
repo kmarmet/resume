@@ -26,6 +26,17 @@
                 .section-content {
                     padding: 8px 0 0 0 !important;
                 }
+                #about-section {
+                    .section-content {
+                        .flex {
+                            align-items: center !important;
+                            justify-content: space-between !important;
+                            width: 100% !important;
+                            padding: 0 5px !important;
+                            margin-bottom: 15px !important;
+                        }
+                    }
+                }
                 #work-history {
                     .job {
                         .job-title,
@@ -100,10 +111,16 @@
                 }
                 #years-experience-wrapper {
                     position: relative !important;
-                    margin: 0 auto !important;
+                    margin: 0 !important;
                     width: 100% !important;
-                    right: unset !important;
+                    right: -25px !important;
                     top: unset !important;
+                    width: 40% !important;
+                    transform: scale(0.85) !important;
+
+                    p:not(.number) {
+                        font-size: 16px !important;
+                    }
                 }
 
                 #skills {

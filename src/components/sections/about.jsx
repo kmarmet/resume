@@ -48,24 +48,26 @@ const About = () => {
     return (
         <div id="about-section" className={`section${activeSection === MenuItems.about ? " active" : ""}`}>
             <div className="section-content">
-                <div
-                    style={{
-                        backgroundImage: `url(${ImageUrls.me})`,
-                    }}
-                    id="profile-picture"
-                />
-                <div id="years-experience-wrapper">
-                    <YearRoller
-                        id={MenuItems.about}
-                        scopedClass="years-roller-about"
-                        maxYear={9}
-                        shouldRoll={activeSection === MenuItems.about}
-                        delay={1500}
+                <div className="flex">
+                    <div
+                        style={{
+                            backgroundImage: `url(${ImageUrls.me})`,
+                        }}
+                        id="profile-picture"
                     />
-                    <p>
-                        Years of <br />
-                        Professional Experience
-                    </p>
+                    <div id="years-experience-wrapper">
+                        <YearRoller
+                            id={MenuItems.about}
+                            scopedClass="years-roller-about"
+                            maxYear={9}
+                            shouldRoll={activeSection === MenuItems.about}
+                            delay={1500}
+                        />
+                        <p>
+                            Years of <br />
+                            Professional Experience
+                        </p>
+                    </div>
                 </div>
                 <div className="text-wrapper">
                     <h1 className="intro">
