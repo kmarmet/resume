@@ -1,8 +1,74 @@
 @use "./palette.scss" as *;
-
+@use "sass:math";
+@use "sass:color";
+@use "sass:string";
 @mixin Glow {
     -webkit-box-shadow: 0px 0px 10px 5px #bd93f9;
     box-shadow: 0px 0px 10px 5px #bd93f9;
+}
+
+@mixin CastShadow($type: "text", $color: black, $length: 20, $fadeout: true, $skew: true, $direction: left) {
+    $shadow: "";
+
+    @if $skew == true or $type == text {
+        @if $direction == right {
+            @for $i from 0 to $length - 1 {
+                $shadow: $shadow + $i + "px " + $i + "px 0 " + $color + ",";
+            }
+        }
+
+        @if $direction == left {
+            @for $i from 0 to $length - 1 {
+                $shadow: $shadow + $i * -1 + "px " + $i + "px 0 " + $color + ",";
+            }
+        }
+    }
+
+    @if $fadeout ==true {
+        @for $i from 1 to $length - 1 {
+            @if $type ==text or $skew ==false {
+                @if $direction ==right {
+                    $shadow: $shadow + $i + "px " + $i + "px 0 " + rgba($color, 1 - $i / $length) + ",";
+                }
+
+                @if $direction ==left {
+                    $shadow: $shadow + $i * -1 + "px " + $i + "px 0 " + rgba($color, calc(1 - $i / $length)) + ",";
+                }
+            }
+
+            @if ($type ==box) and $skew ==true {
+                @if $direction ==right {
+                    $shadow: $shadow + $i + "px " + $i + "px 0 " + $i * 0.2 + "px " + rgba($color, 1 - $i / $length) + ",";
+                }
+
+                @if $direction ==left {
+                    $shadow: $shadow + $i * -1 + "px " + $i + "px 0 " + $i * 0.2 + "px " + rgba($color, 1 - $i / $length) + ",";
+                }
+            }
+        }
+
+        $shadow: $shadow + $length + "px " + $length + "px 0 " + rgba($color, 0);
+    }
+
+    @if $fadeout ==false {
+        @if $skew ==true and ($type ==box) {
+            @for $i from 0 to $length - 1 {
+                $shadow: $shadow + $i + "px " + $i + "px 0 " + $i * 0.1 + "px " + $color + ",";
+            }
+        }
+
+        $shadow: $shadow + $length + "px " + $length + "px 0 " + rgba(0, 0, 0, 0);
+    }
+
+    $shadow: string.unquote($shadow);
+
+    @if $type == "box" {
+        box-shadow: $shadow;
+    }
+
+    @if $type == "text" {
+        text-shadow: $shadow;
+    }
 }
 
 @mixin Modal {
@@ -10,7 +76,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 100%), scale(0);
+    transform: translate(-50%, 100%) scale(0);
     opacity: 0;
     transition: all 0.5s ease-in-out;
     background-color: $background;
@@ -22,7 +88,7 @@
     border: 1px solid $selection;
 
     &.show {
-        transform: translate(-50%, -50%), scale(1);
+        transform: translate(-50%, -50%) scale(1);
         opacity: 1;
         transition: all 0.5s ease-in-out;
         pointer-events: all;
@@ -38,6 +104,29 @@
         .language-name,
         .icon-wrapper {
             color: #549a48;
+        }
+        button {
+            margin: 10px auto;
+            background: #549a48;
+        }
+        .collapsible {
+            overflow-y: scroll;
+            mask-image: linear-gradient(to top, transparent 0%, black 20%);
+            mask-repeat: no-repeat;
+            mask-size: 100% 100%;
+            &.open {
+                max-height: 200px;
+                padding-bottom: 50px;
+            }
+        }
+        ul {
+            li {
+                color: $foreground;
+                line-height: 1.6;
+                list-style-type: disc;
+                list-style-position: inside;
+                font-size: 15px;
+            }
         }
     }
     &.react {

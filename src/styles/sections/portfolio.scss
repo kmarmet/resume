@@ -2,9 +2,28 @@
 
 #portfolio {
     .section-content {
+        .collapsible-titles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 30px;
+            margin-bottom: 20px;
+
+            .collapsible-title {
+                background: transparent;
+                font-weight: bold;
+                padding: 0;
+                border-radius: 0;
+                padding-bottom: 5px;
+                border-bottom: 1px solid $sectionBorder;
+                &.open {
+                    color: $green;
+                    border-bottom-color: rgba($green, 0.5);
+                }
+            }
+        }
+
         .projects {
             overflow: visible;
-
             a {
                 border-radius: 50px;
                 padding: 5px 15px;
@@ -19,9 +38,25 @@
                     transform: scale(1.2);
                     transition: all 0.4s ease;
                 }
+                &.upwork {
+                    background-color: black;
+                    color: white;
+                    .icon-wrapper {
+                        transform: scale(0.65);
+                    }
+                }
                 &.view-essence {
                     background-color: #232542;
                     color: #84a6ed;
+
+                    .icon-wrapper {
+                        transform: scale(1.4);
+                    }
+                }
+                &.view-gradall {
+                    background-color: $darkGreen;
+                    color: white;
+                    height: 35px;
 
                     .icon-wrapper {
                         transform: scale(1.4);
@@ -35,13 +70,14 @@
                         transform: scale(0.5);
                     }
                 }
-                &.view-profile {
-                    background-color: white;
-                    color: $darkGreen;
+                &.quora {
+                    background-color: #b72831;
+                    color: white;
+                    padding: 10px 20px;
                     .icon-wrapper {
                         margin-left: 5px;
-                        height: 20px;
-                        width: 20px;
+                        height: 15px;
+                        width: 15px;
                     }
                 }
             }

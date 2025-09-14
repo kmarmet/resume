@@ -70,6 +70,14 @@ const About = () => {
                     </div>
                 </div>
                 <div className="text-wrapper">
+                    <div id="quote-wrapper">
+                        <p className="quote">
+                            <span className="icon-wrapper left">{CommonIcons.quotes}</span>Be humble. Be hungry. And always be the hardest worker in
+                            the room.
+                            <span className="icon-wrapper right">{CommonIcons.quotes}</span>
+                        </p>
+                        <p className="author">Dwayne Johnson</p>
+                    </div>
                     <h1 className="intro">
                         <b>Hey {recuiterName ? recuiterName : ""}</b>
                         <span className="icon-wrapper">{CommonIcons.handWave}</span>
@@ -86,7 +94,7 @@ const About = () => {
                     <Spacer height={20} />
 
                     <h2>
-                        <span className="icon-wrapper eyes">{CommonIcons.eyes}</span>The Important Stuff
+                        <span className="icon-wrapper">{CommonIcons.chevronRight}</span>The Important Stuff
                     </h2>
                     <Spacer height={2} />
                     <p className="text">

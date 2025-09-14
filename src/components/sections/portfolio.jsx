@@ -10,17 +10,19 @@ import Spacer from "../shared/spacer"
 
 const Portfolio = () => {
     const activeSection = useSelector((state) => state.globalState.activeSection)
+
+    // SLIDESHOW STATES
+    const [showGradallSlideshow, setShowGradallSlideshow] = React.useState(false)
+    const [showEssenceAppSlideshow, setShowEssenceAppSlideshow] = React.useState(false)
     const [showDVRSlideshow, setShowDVRSlideshow] = React.useState(false)
     const [showUpworkSlideshow, setShowUpworkSlideshow] = React.useState(false)
-    const [showDVRProject, setShowDVRProject] = React.useState(false)
-    const [showFreelancingWork, setShowFreelancingWork] = React.useState(false)
-    const [showQuoraProject, setShowQuoraProject] = React.useState(false)
     const [showQuoraSlideshow, setShowQuoraSlideshow] = React.useState(false)
-    const [showGradallProject, setShowGradallProject] = React.useState(false)
-    const [showGradallSlideshow, setShowGradallSlideshow] = React.useState(false)
-    const [showEssenceAppProject, setShowEssenceAppProject] = React.useState(false)
-    const [showEssenceAppSlideshow, setShowEssenceAppSlideshow] = React.useState(false)
     const [showOldDogsSlideshow, setShowOldDogsSlideshow] = React.useState(false)
+    const [showAppUpdaterSlideshow, setShowAppUpdaterSlideshow] = React.useState(false)
+
+    // PROJECT STATES
+    const [activeProject, setActiveProject] = React.useState(null)
+
     return (
         <>
             <Slideshow
@@ -33,7 +35,6 @@ const Portfolio = () => {
                     {url: ImageUrls.userManagement, title: "User Management"},
                     {url: ImageUrls.cameraManagement, title: "Camera Management"},
                     {url: ImageUrls.roleManagement, title: "Role Management"},
-                    {url: ImageUrls.upworkStats, title: "Upwork Stats"},
                 ]}
             />
             <Slideshow
@@ -60,6 +61,12 @@ const Portfolio = () => {
             />
 
             <Slideshow
+                show={showAppUpdaterSlideshow}
+                hide={() => setShowAppUpdaterSlideshow(false)}
+                images={[{url: ImageUrls.appUpdater, title: ""}]}
+            />
+
+            <Slideshow
                 show={showEssenceAppSlideshow}
                 hide={() => setShowEssenceAppSlideshow(false)}
                 images={[
@@ -81,31 +88,41 @@ const Portfolio = () => {
             />
             <div id="portfolio" className={`section${activeSection === MenuItems.portfolio ? " active" : ""}`}>
                 <div className="section-content">
-                    <div className="flex gap-10">
+                    <div className="flex gap-10 collapsible-titles">
                         <CollapsibleTitle
-                            toggleState={showEssenceAppProject}
+                            toggleState={activeProject === "essenceApp"}
                             titleText={"Essence Application"}
-                            onClick={() => setShowEssenceAppProject(!showEssenceAppProject)}
+                            onClick={() => setActiveProject(activeProject === "essenceApp" ? null : "essenceApp")}
                         />
                         <CollapsibleTitle
-                            toggleState={showDVRProject}
+                            toggleState={activeProject === "dvr"}
                             titleText={"Web App: DVR"}
-                            onClick={() => setShowDVRProject(!showDVRProject)}
+                            onClick={() => setActiveProject(activeProject === "dvr" ? null : "dvr")}
                         />
                         <CollapsibleTitle
-                            toggleState={showFreelancingWork}
+                            toggleState={activeProject === "appUpdater"}
+                            titleText={"Web App: App Updater"}
+                            onClick={() => setActiveProject(activeProject === "appUpdater" ? null : "appUpdater")}
+                        />
+                        <CollapsibleTitle
+                            toggleState={activeProject === "freelancing"}
                             titleText="Freelancing"
-                            onClick={() => setShowFreelancingWork(!showFreelancingWork)}
+                            onClick={() => setActiveProject(activeProject === "freelancing" ? null : "freelancing")}
                         />
-                        <CollapsibleTitle toggleState={showQuoraProject} titleText={"Quora"} onClick={() => setShowQuoraProject(!showQuoraProject)} />
                         <CollapsibleTitle
-                            toggleState={showGradallProject}
+                            toggleState={activeProject === "quora"}
+                            titleText={"Quora"}
+                            onClick={() => setActiveProject(activeProject === "quora" ? null : "quora")}
+                        />
+                        <CollapsibleTitle
+                            toggleState={activeProject === "gradall"}
                             titleText={"Gradall"}
-                            onClick={() => setShowGradallProject(!showGradallProject)}
+                            onClick={() => setActiveProject(activeProject === "gradall" ? null : "gradall")}
                         />
                     </div>
                     <div className="projects">
-                        <Collapsible toggleState={showDVRProject}>
+                        <Collapsible toggleState={activeProject === "dvr"}>
+                            <h3 className="yellow">DVR Web Application</h3>
                             <Spacer height={5} />
                             <p>
                                 The DVR Web is a web hosted DVR application used across all three of TimkenSteel&apos;s plants, to view cameras (live)
@@ -114,9 +131,12 @@ const Portfolio = () => {
                             </p>
                             <Spacer height={10} />
                             <p>
-                                I independently developed all front end functionality, along with create/read/update/delete (CRUD) functionality on
-                                the back end. The application is currently used by several hundred employees.
+                                <span className="emphasize">I independently developed</span> all front end functionality, along with
+                                create/read/update/delete (CRUD) functionality on the back end.{" "}
+                                <span className="emphasize">The application is currently used by several hundred employees.</span>
                             </p>
+                            <Spacer height={15} />
+                            <hr />
                             <Spacer height={15} />
                             <h3>Features</h3>
                             <Spacer height={5} />
@@ -155,7 +175,7 @@ const Portfolio = () => {
                                 <li>Add/remove custom roles</li>
                             </ul>
                             <Spacer height={20} />
-                            <div className="thumbnails" onClick={() => setShowSlideshow(true)}>
+                            <div className="thumbnails" onClick={() => setShowDVRSlideshow(true)}>
                                 <img src={ImageUrls.replay} alt="replay" />
                                 <img src={ImageUrls.allCameras} alt="all cameras" />
                                 <img src={ImageUrls.hostManagement} alt="host management" />
@@ -165,22 +185,68 @@ const Portfolio = () => {
                             </div>
                         </Collapsible>
 
-                        <Collapsible toggleState={showFreelancingWork}>
+                        <Collapsible toggleState={activeProject === "appUpdater"}>
+                            <h3 className="yellow">App Updater</h3>
+                            <Spacer height={10} />
+                            <p>
+                                <span className="emphasize">A small, but powerful web application that I independently developed</span> for
+                                TimkenSteel Process Engineers/Analysts. Our team had several servers with various applications installed on them. We
+                                needed a way to update an application/service on multiple or even all servers without copying/pasting the published
+                                directory files for each server.
+                            </p>
+                            <Spacer height={10} />
+                            <p>
+                                As this was a frustration I experienced myself,{" "}
+                                <span className="emphasize">
+                                    I decided to develop this application to make our lives easier, although no task for this application was ever
+                                    assigned to me
+                                </span>
+                            </p>
+                            <Spacer height={10} />
+                            <p>
+                                This allows users to enter minimal information to{" "}
+                                <span className="emphasize">update an application/service on multiple or even all servers with a single click.</span>
+                            </p>
+                            <Spacer height={15} />
+                            <hr />
+                            <Spacer height={15} />
+                            <h3>Details</h3>
+                            <Spacer height={10} />
+                            <ul>
+                                <li>Authentication is used to allow storage of commonly updated applications</li>
+                                <li>
+                                    <span className="emphasize">Impersonation (C#) is used with Active Directory</span> to access remote servers that
+                                    require app updates
+                                </li>
+                                <li>An input source and destination (on the remove server) to tell the application where to copy files to/from</li>
+                                <li>Ability to exclude files by filetype (e.g. .exe, .dll, .config)</li>
+                                <li>
+                                    <span className="emphasize">Uses an entered hostname array to loop through and update each server</span>
+                                </li>
+                            </ul>
+                            <Spacer height={20} />
+                            <div className="thumbnails" onClick={() => setShowAppUpdaterSlideshow(true)}>
+                                <img src={ImageUrls.appUpdater} alt="App Updater" />
+                            </div>
+                        </Collapsible>
+
+                        <Collapsible toggleState={activeProject === "freelancing"}>
+                            <h3 className="yellow">Upwork</h3>
+                            <Spacer height={10} />
                             <p>Over the years I have also freelanced for several clients on Upwork, which you can see in the images below.</p>
 
-                            <Spacer height={5} />
+                            <Spacer height={15} />
+                            <Spacer height={15} />
                             <div className="thumbnails" onClick={() => setShowUpworkSlideshow(true)}>
                                 <img src={ImageUrls.upwork} alt="upwork" />
                                 <img src={ImageUrls.upworkStats} alt="upwork stats" />
                             </div>
-                            <a
-                                className="view-profile"
-                                href="https://www.upwork.com/freelancers/~01baddbe5fbfbf7dc7"
-                                target="_blank"
-                                rel="noreferrer">
+                            <a className="upwork" href="https://www.upwork.com/freelancers/~01baddbe5fbfbf7dc7" target="_blank" rel="noreferrer">
                                 View my Profile <span className="icon-wrapper">{CommonIcons.upwork}</span>
                             </a>
 
+                            <Spacer height={35} />
+                            <hr />
                             <Spacer height={30} />
                             <h3 className="yellow">Example Project: Two Old Dogs</h3>
                             <Spacer height={10} />
@@ -194,17 +260,18 @@ const Portfolio = () => {
                             </a>
                         </Collapsible>
 
-                        <Collapsible toggleState={showQuoraProject}>
+                        <Collapsible toggleState={activeProject === "quora"}>
                             <p>In the past I have answered many questions to help others with their programming questions on Quora.</p>
                             <Spacer height={10} />
                             <div className="thumbnails" onClick={() => setShowQuoraSlideshow(true)}>
                                 <img src={ImageUrls.quora} alt="quora" />
                             </div>
-                            <a className="view-profile" href="https://www.quora.com/profile/Kevin-Marmet-1" target="_blank" rel="noreferrer">
+                            <a className="quora" href="https://www.quora.com/profile/Kevin-Marmet-1" target="_blank" rel="noreferrer">
                                 View my Profile <span className="icon-wrapper">{CommonIcons.quora}</span>
                             </a>
                         </Collapsible>
-                        <Collapsible toggleState={showGradallProject}>
+
+                        <Collapsible toggleState={activeProject === "gradall"}>
                             <p>
                                 Gradall is large scale hydraulic excavators manufacturer. Independently, I developed the entire website including the
                                 front end, back end and database interactions.
@@ -227,6 +294,9 @@ const Portfolio = () => {
                                     Video Streaming with a multitude of filters that can be combined to find the exact video the user is looking for.
                                 </li>
                             </ul>
+                            <a className="view-gradall" href="https://gradall.com/" target="_blank" rel="noreferrer">
+                                Visit Website
+                            </a>
                             <Spacer height={10} />
                             <div className="thumbnails" onClick={() => setShowGradallSlideshow(true)}>
                                 <img src={ImageUrls.gradallOne} alt="gradall" />
@@ -234,15 +304,16 @@ const Portfolio = () => {
                                 <img src={ImageUrls.gradallThree} alt="gradall" />
                             </div>
                         </Collapsible>
-                        <Collapsible toggleState={showEssenceAppProject}>
+
+                        <Collapsible toggleState={activeProject === "essenceApp"}>
                             <p>
-                                Essence is an application for both iOS and Android platforms that allows the user to store{" "}
-                                <span className="emphasize">ANY</span> information about the people in their circle.
+                                Essence is <span className="emphasize">an application that I independently developed for both iOS and Android</span>{" "}
+                                that allows the user to store <span className="emphasize">ANY</span> information about the people in their circle.
                             </p>
                             <Spacer height={10} />
                             <p>
-                                It was developed using React Native alongside Expo, which as a new mobile application developer made it seamless to
-                                deploy.
+                                It was developed using <span className="emphasize">React Native</span> alongside{" "}
+                                <span className="emphasize">Expo</span>, which as a new mobile application developer made it seamless to deploy.
                             </p>
                             <Spacer height={10} />
                             <div className="thumbnails" onClick={() => setShowEssenceAppSlideshow(true)}>

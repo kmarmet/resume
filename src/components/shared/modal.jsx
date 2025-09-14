@@ -12,9 +12,7 @@ const Modal = ({children, show, hide = () => {}, scopedClass = ""}) => {
     return (
         <>
             <div className={`modal ${activeSection?.toLowerCase()} ${show ? " show" : ""} ${scopedClass} ${show ? "slide-up" : "slide-down"}`}>
-                <div className="modal-content" onClick={hide}>
-                    {children}
-                </div>
+                <div className="modal-content">{children}</div>
             </div>
             <button className={`close-modal-button ${activeSection?.toLowerCase()} ${show ? "active" : ""}`} onClick={hide} aria-label="Close Modal">
                 <div className="icon-wrapper">{CommonIcons.close}</div>

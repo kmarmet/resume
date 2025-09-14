@@ -8,12 +8,62 @@
 @use "./responsive.scss" as *;
 @use "./slideshow.scss" as *;
 
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
 #blur {
     position: fixed;
     inset: 0;
     z-index: 999999;
     opacity: 0;
     pointer-events: none;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+#feedback-form {
+    display: block;
+    textarea {
+        border-radius: 10px;
+        background-color: $background;
+        width: 100%;
+        min-height: 200px;
+        display: block;
+        padding: 10px;
+        border: 1px solid $sectionBorder;
+        color: $foreground;
+    }
+
+    h2 {
+        color: red;
+        color: $green;
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    button {
+        background-color: $darkGreen;
+        color: white;
+        width: 100%;
+        border: 0;
+        border-radius: 50px;
+        padding: 15px 0;
+    }
+
+    .disclaimer {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    .feedback-subtitle {
+        font-size: 15px;
+    }
 }
 
 #floating-buttons {
@@ -24,49 +74,79 @@
     z-index: 9999;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     background-color: rgba($background, 0.5);
     padding-bottom: 50px;
     backdrop-filter: blur(10px);
-    gap: 0 45px;
+    gap: 0 15px;
     padding: 8px 20px 30px 20px;
 
-    .floating-button {
-        border-radius: 100%;
-        border: 0;
-        // height: 50px;
-        // width: 50px;
-        aspect-ratio: 1 / 1;
+    .button-wrapper {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-
-        button {
-            background: transparent;
-            border: 0;
-        }
-        svg {
-            color: white;
-        }
 
         &:nth-child(1) {
-            background-color: $darkGreen;
             animation: Pulse 1.5s ease-in-out infinite;
+
+            .floating-button {
+                background-color: $darkGreen;
+            }
             .icon-wrapper {
                 transform: scale(0.9);
             }
         }
         &:nth-child(2) {
-            background-color: black;
+            .floating-button {
+                background-color: black;
+            }
         }
         &:nth-child(3) {
-            background-color: #0073af;
+            .floating-button {
+                background-color: #0073af;
+            }
             .icon-wrapper {
                 transform: scale(0.9);
             }
         }
         &:nth-child(4) {
-            background-color: $darkPurple;
+            .floating-button {
+                background-color: $darkPurple;
+            }
+        }
+        &:nth-child(5) {
+            .floating-button {
+                background-color: #db7114;
+            }
+        }
+        .text {
+            color: $foreground;
+            font-size: 12px;
+            padding-top: 8px;
+        }
+        .floating-button {
+            border: 0;
+            border-radius: 100%;
+            // aspect-ratio: 1 / 1;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .icon-wrapper {
+                &.pen {
+                    transform: scale(0.85);
+                }
+                button {
+                    background: transparent;
+                    border: 0;
+                }
+                svg {
+                    color: white;
+                }
+            }
         }
     }
 }
@@ -81,6 +161,11 @@ p {
 
 .yellow {
     color: $yellow !important;
+}
+
+.green {
+    color: #549a48 !important;
+    font-weight: bold;
 }
 
 .star-filled-icon,
@@ -148,11 +233,13 @@ p {
     }
 
     &:hover {
-        cursor: pointer;
-        height: 70px;
-        width: 70px;
-        transition: all 0.4s ease;
-        box-shadow: 0 48px 20px -20px rgba(0, 0, 0, 0.9);
+        @media screen and (min-width: 701px) {
+            cursor: pointer;
+            height: 70px;
+            width: 70px;
+            transition: all 0.4s ease;
+            box-shadow: 0 48px 20px -20px rgba(0, 0, 0, 0.9);
+        }
     }
 
     svg {

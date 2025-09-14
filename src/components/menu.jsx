@@ -15,7 +15,7 @@ const Menu = () => {
                     className={`menu-item${activeSection === MenuItems.about ? " active" : ""}`}
                     onClick={() => dispatch(setActiveSection(MenuItems.about))}>
                     <span className="menu-label">
-                        <span className="icon-wrapper">{CommonIcons.about}</span>
+                        <span className="icon-wrapper">{CommonIcons.notes}</span>
                         {MenuItems.about}
                     </span>
                 </div>
@@ -31,7 +31,7 @@ const Menu = () => {
                     className={`menu-item${activeSection === MenuItems.portfolio ? " active" : ""}`}
                     onClick={() => dispatch(setActiveSection(MenuItems.portfolio))}>
                     <span className="menu-label">
-                        <span className="icon-wrapper smile">{CommonIcons.smileEmoji}</span>
+                        <span className="icon-wrapper smile">{CommonIcons.collection}</span>
                         {MenuItems.portfolio}
                     </span>
                 </div>

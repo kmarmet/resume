@@ -25,6 +25,7 @@ const Skills = () => {
     const [activeSkill, setActiveSkill] = React.useState("")
     const [showLanguages, setShowLanguages] = React.useState(false)
     const [languageTimeoutID, setLanguageTimeoutID] = React.useState(null)
+    const [showNodeBackendDetails, setShowNodeBackendDetails] = React.useState(false)
 
     const RemoveActiveSkillClasses = () => {
         if (languageTimeoutID) {
@@ -340,13 +341,37 @@ const Skills = () => {
                         </p>
                         <Spacer height={10} />
                         <p className="body">
-                            I am
-                            <i>
-                                <u>somewhat</u>
-                            </i>
-                            new to Node.js, but I have had the opportunity to work with it on a few projects. As a developer that started primarily on
-                            the frontend, I find it refreshing to be able to built a backend with Node.js.
+                            I have had the opportunity to work with Node.js on a few projects. As a developer that started primarily on the frontend,
+                            I find it refreshing to be able to build a backend with Node.js.
                         </p>
+                        <Spacer height={15} />
+                        <p>
+                            I have also developed and actively use an app (personal use) that has a dedicated, always-on reminder service built with
+                            Node.js.
+                        </p>
+                        <Spacer height={10} />
+                        <CollapsibleTitle
+                            toggleState={showNodeBackendDetails}
+                            onClick={() => setShowNodeBackendDetails(!showNodeBackendDetails)}
+                            titleText={"Aspects of Node.js backend"}
+                            scopedClass="node"
+                        />
+                        <Collapsible scopedClass="node" toggleState={showNodeBackendDetails}>
+                            <p className="green">The Node.js backend is responsible for:</p>
+                            <Spacer height={5} />
+                            <ul>
+                                <li>Constant uptime (always online) to check for reminders to send at regular intervals.</li>
+                                <li>Getting users, their calendar events and finally their reminders for each event.</li>
+                                <li>
+                                    User information, calendar events and reminders are stored in{" "}
+                                    <span className="emphasize">Firebase Realtime Database</span>.
+                                </li>
+                                <li>
+                                    Sending reminder web push notifications via <span className="emphasize">OneSignal</span>.
+                                </li>
+                                <li>Caching users and events in memory to reduce calls to Firebase and improve performance.</li>
+                            </ul>
+                        </Collapsible>
                         <Spacer height={15} />
                         <p className="rating row">
                             <span className="label">Proficiency</span>
@@ -374,48 +399,56 @@ const Skills = () => {
                     <Collapsible toggleState={showLanguages}>
                         <div className="content">
                             <div id="skills">
+                                {/* HTML */}
                                 <div
                                     className={`skill html${activeSkill === SkillsCollection.html ? " active" : ""}`}
                                     onClick={() => setActiveSkill(SkillsCollection.html)}>
                                     <span className="icon-wrapper main"> {CommonIcons.html}</span>
                                     <span className="icon-wrapper expand-icon"> {CommonIcons.expand}</span>
                                 </div>
+                                {/* JS */}
                                 <div
                                     className={`skill js${activeSkill === SkillsCollection.js ? " active" : ""}`}
                                     onClick={() => setActiveSkill(SkillsCollection.js)}>
                                     <span className="icon-wrapper main"> {CommonIcons.js}</span>
                                     <span className="icon-wrapper expand-icon"> {CommonIcons.expand}</span>
                                 </div>
+                                {/* React */}
                                 <div
                                     className={`skill react${activeSkill === SkillsCollection.react ? " active" : ""}`}
                                     onClick={() => setActiveSkill(SkillsCollection.react)}>
                                     <span className="icon-wrapper main"> {CommonIcons.react}</span>
                                     <span className="icon-wrapper expand-icon"> {CommonIcons.expand}</span>
                                 </div>
+                                {/* SASS */}
                                 <div
                                     className={`skill sass${activeSkill === SkillsCollection.sass ? " active" : ""}`}
                                     onClick={() => setActiveSkill(SkillsCollection.sass)}>
                                     <span className="icon-wrapper main"> {CommonIcons.sass}</span>
                                     <span className="icon-wrapper expand-icon"> {CommonIcons.expand}</span>
                                 </div>
+                                {/* C# */}
                                 <div
                                     className={`skill csharp${activeSkill === SkillsCollection.csharp ? " active" : ""}`}
                                     onClick={() => setActiveSkill(SkillsCollection.csharp)}>
                                     <span className="icon-wrapper main"> {CommonIcons.csharp}</span>
                                     <span className="icon-wrapper expand-icon"> {CommonIcons.expand}</span>
                                 </div>
+                                {/* SQL */}
                                 <div
                                     className={`skill sql${activeSkill === SkillsCollection.sql ? " active" : ""}`}
                                     onClick={() => setActiveSkill(SkillsCollection.sql)}>
                                     <span className="icon-wrapper main"> {CommonIcons.sql}</span>
                                     <span className="icon-wrapper expand-icon"> {CommonIcons.expand}</span>
                                 </div>
+                                {/* TypeScript */}
                                 <div
                                     className={`skill typescript${activeSkill === SkillsCollection.typescript ? " active" : ""}`}
                                     onClick={() => setActiveSkill(SkillsCollection.typescript)}>
                                     <span className="icon-wrapper main"> {CommonIcons.typescript}</span>
                                     <span className="icon-wrapper expand-icon"> {CommonIcons.expand}</span>
                                 </div>
+                                {/* Node.js */}
                                 <div
                                     className={`skill node${activeSkill === SkillsCollection.node ? " active" : ""}`}
                                     onClick={() => setActiveSkill(SkillsCollection.node)}>
@@ -452,14 +485,54 @@ const Skills = () => {
                         <span className="bubble">BitBucket</span>
                         <span className="bubble">ChatGPT</span>
                         <span className="bubble">Confluence</span>
-
+                        <span className="bubble">Sentry.IO</span>
                         <span className="bubble">SSMS</span>
                         <span className="bubble">Postman</span>
                         <span className="bubble">NPM/Nuget</span>
                         <span className="bubble">TFS</span>
                         <span className="bubble">Vite</span>
-                        <span className="bubble">Parcel Package Bundler</span>
-                        <span className="bubble">Remote Desktop Protocol</span>
+                        <span className="bubble">Parcel</span>
+                        <span className="bubble">RDP</span>
+                    </div>
+                    <Spacer height={20} />
+
+                    {/* TOOLS */}
+                    <h2 className="tech-section-subtitle">APIs</h2>
+                    <Spacer height={10} />
+                    <div className="bubbles">
+                        <span className="bubble">OneSignal</span>
+                        <span className="bubble">Firebase</span>
+                        <span className="bubble">Sapler</span>
+                        <span className="bubble">ManyAPIs</span>
+                        <span className="bubble">OCR</span>
+                        <span className="bubble">ipify</span>
+                    </div>
+                    <Spacer height={20} />
+
+                    {/* DATABASES */}
+                    <h2 className="tech-section-subtitle">Databases</h2>
+                    <Spacer height={10} />
+                    <div className="bubbles">
+                        <span className="bubble">SQL Server</span>
+                        <span className="bubble">MySQL</span>
+                        <span className="bubble">Firebase Realtime DB</span>
+                        <span className="bubble">Firestore</span>
+                        <span className="bubble">SOLR</span>
+                    </div>
+                    <Spacer height={20} />
+
+                    {/* PWA */}
+                    <h2 className="tech-section-title">Progressive Web App (PWA)</h2>
+                    <Spacer height={10} />
+                    <div className="bubbles">
+                        <span className="bubble">Workbox Module</span>
+                        <span className="bubble">Service Workers</span>
+                        <span className="bubble">Manifest Configuration</span>
+                        <span className="bubble">Push Notifications</span>
+                        <span className="bubble">Offline Support</span>
+                        <span className="bubble">Installable</span>
+                        <span className="bubble">SSL</span>
+                        <span className="bubble">Splashscreen Creation</span>
                     </div>
                     <Spacer height={20} />
 
@@ -523,16 +596,6 @@ const Skills = () => {
                         <span className="bubble">WebStorm</span>
                     </div>
                     <Spacer height={30} />
-
-                    {/* PWA */}
-                    <h2 className="tech-section-title">Progressive Web App</h2>
-                    <Spacer height={10} />
-                    <div className="bubbles">
-                        <span className="bubble">Workbox</span>
-                        <span className="bubble">Service Worker</span>
-                        <span className="bubble">Manifest</span>
-                    </div>
-                    <Spacer height={20} />
                 </div>
             </div>
         </>

@@ -22,6 +22,7 @@ const ImageUrls = {
     oldDogsTwo: "https://i.imghippo.com/files/QVM6783gYQ.png",
     oldDogsThree: "https://i.imghippo.com/files/ZMXk4221AM.png",
     me: "https://i.imghippo.com/files/xsb5776A.jpg",
+    appUpdater: "https://i.imghippo.com/files/yjz9866oU.png",
 }
 
 export default ImageUrls

@@ -1,6 +1,6 @@
 import React from "react"
 import {BiLogoTypescript} from "react-icons/bi"
-import {BsFillBugFill, BsQuora, BsSendFill, BsTextLeft} from "react-icons/bs"
+import {BsCollectionFill, BsFillBugFill, BsHandThumbsDownFill, BsQuora, BsSendFill, BsTextLeft} from "react-icons/bs"
 import {CgArrowsExpandRight} from "react-icons/cg"
 import {DiHtml5, DiJsBadge, DiReact} from "react-icons/di"
 import {
@@ -10,6 +10,7 @@ import {
     FaInfoCircle,
     FaLinkedinIn,
     FaNode,
+    FaPenAlt,
     FaRegStar,
     FaSass,
     FaSave,
@@ -21,9 +22,10 @@ import {FaAddressCard, FaAngleLeft, FaAngleRight, FaBugSlash, FaChildren, FaCode
 import {GiGraduateCap, GiMammoth} from "react-icons/gi"
 import {HiColorSwatch} from "react-icons/hi"
 import {HiDocumentCheck, HiPhoneArrowUpRight} from "react-icons/hi2"
+import {ImQuotesRight} from "react-icons/im"
 import {IoMdMegaphone} from "react-icons/io"
 import {IoClose, IoDocumentText, IoPhonePortrait} from "react-icons/io5"
-import {MdEdit, MdEmail, MdLaunch, MdMilitaryTech, MdTipsAndUpdates} from "react-icons/md"
+import {MdEdit, MdEmail, MdLaunch, MdMilitaryTech, MdNotes, MdTipsAndUpdates} from "react-icons/md"
 import {
     PiArrowsInSimple,
     PiCalendarDotsFill,
@@ -37,12 +39,18 @@ import {
     PiRepeatBold,
     PiTagFill,
 } from "react-icons/pi"
-import {RiCodeSSlashFill} from "react-icons/ri"
+import {RiCodeSSlashFill, RiQuillPenAiFill} from "react-icons/ri"
 import {RxUpdate} from "react-icons/rx"
 import {SiCoffeescript, SiJquery, SiLodash} from "react-icons/si"
 import {TbArrowBadgeRightFilled, TbCircleDotFilled, TbMessageCircleSearch, TbSql} from "react-icons/tb"
 import Svgs from "./svgs/svgs"
 const CommonIcons = {
+    quotes: <ImQuotesRight className="quotes-right-icon" />,
+    notes: <MdNotes className="notes-icon" />,
+    collection: <BsCollectionFill className="collection-icon" />,
+    pen: <FaPenAlt className="pen-icon" />,
+    quill: <RiQuillPenAiFill className="quill-icon" />,
+    thumbsDown: <BsHandThumbsDownFill className="thumbs-down-icon" />,
     linkedInOutline: <FaLinkedinIn className="linkedin-icon" />,
     github: <FaGithub className="github-icon" />,
     quora: <BsQuora className="quora-icon" />,

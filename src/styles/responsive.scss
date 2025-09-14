@@ -1,3 +1,5 @@
+@use "./mixins.scss" as *;
+
 @layer responsive {
     .App {
         @media screen and (min-width: 701px) {
@@ -8,16 +10,19 @@
         // Mobile
         @media (max-width: 700px) {
             * {
-                &:hover {
-                    transform: none !important;
+                button,
+                a,
+                p,
+                .icon-wrapper,
+                svg,
+                .close-modal-button {
+                    &:hover {
+                        transform: none !important;
+                    }
                 }
             }
-            .years-roller {
-                height: 55px !important;
-                width: 55px !important;
-            }
             .modal {
-                width: 90vw !important;
+                width: 95vw !important;
             }
             .skeleton {
                 margin: 0 !important;
